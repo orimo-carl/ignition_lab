@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metal Solid Propellant Motor - IGNITION</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --text-light: #f1faee;
+            --bg-dark: #0b0d17;
+            --card-bg: #15192b;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Pretendard', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+        }
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #a8dadc;
+            font-size: 1.2rem;
+        }
+        .section {
+            margin-bottom: 4rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        h2 {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .spec-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .spec-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #8d99ae;
+            margin-bottom: 0.3rem;
+        }
+        .spec-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Image Placeholder Styling */
+        .img-placeholder {
+            width: 100%;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            color: #8d99ae;
+            text-align: center;
+        }
+        .img-placeholder p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .content-img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 2rem 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="ignition_intro.html" class="back-link">← Back to Home</a>
+            <h1>Metal Solid Propellant Motor</h1>
+            <p class="subtitle">High Pressure KNSB Fine Grain Motor Development</p>
+        </header>
+
+        <section class="section">
+            <h2>1. Design Goals</h2>
+            <p>본 연구는 고압 연소 환경(900 psi)을 견딜 수 있는 금속(Al6061-O) 케이싱 기반의 고체 로켓 모터를 개발하는 것입니다. 기존 PVC 파이프의 한계를 넘어 더 높은 비추력(Isp)과 구조적 안정성을 확보하고자 합니다.</p>
+            
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <span class="spec-label">Chamber Diameter</span>
+                    <span class="spec-value">58 mm</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Design Pressure (Pc)</span>
+                    <span class="spec-value">900 psi</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Propellant</span>
+                    <span class="spec-value">KNSB Fine</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Chamber Material</span>
+                    <span class="spec-value">Al6061 - O</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Thrust Curve Analysis</h2>
+            <p>OpenMotor 및 엑셀 시뮬레이션을 통해 시간에 따른 연소실 압력과 추력을 예측하였습니다. KNSB Fine 추진제의 연소 특성을 반영하여 그레인 형상을 설계하였습니다.</p>
+            
+            <!-- User Instructions: Save an image of the graph as thrust_curve.png -->
+            <img src="images/thrust_curve.png" alt="Thrust vs Time Graph" class="content-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <p><strong>이미지 추가 방법:</strong><br>
+                PDF의 'Thrust vs Time' 그래프를 캡처하여<br>
+                <code>images/thrust_curve.png</code> 이름으로 저장하세요.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Structural Design (CAD)</h2>
+            <p>58mm 직경의 챔버와 노즐, 그리고 격벽(Bulkhead) 구조를 설계하였습니다. 오링(O-ring)을 이용한 기밀 유지 설계와 볼트 체결 방식을 적용하여 안전성을 확보하였습니다.</p>
+            
+            <!-- User Instructions: Save an image of the motor CAD as solid_motor_cad.png -->
+            <img src="images/solid_motor_cad.png" alt="Solid Motor CAD Model" class="content-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder">
+                <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <p><strong>이미지 추가 방법:</strong><br>
+                PDF의 2D 도면 또는 3D 렌더링 이미지를 캡처하여<br>
+                <code>images/solid_motor_cad.png</code> 이름으로 저장하세요.</p>
+            </div>
+            
+            <ul>
+                <li><strong>Bolt:</strong> M3 SUS304 (Yield Strength 200 Mpa)</li>
+                <li><strong>Safety Factor:</strong> > 2.5</li>
+                <li><strong>Nozzle Throat:</strong> 9.15 mm</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
